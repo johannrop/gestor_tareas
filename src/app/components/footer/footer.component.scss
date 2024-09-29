@@ -1,0 +1,15 @@
+footer {
+    background: rgb(46, 46, 46);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    
+  span {
+    width: 2em;
+    margin: 4px;
+    color: white;
+  }
+}
