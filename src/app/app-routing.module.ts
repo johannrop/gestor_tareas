@@ -11,7 +11,15 @@ const routes: Routes = [
   {
     path: 'app-start',
     component: StartComponent,
-  }
+  },
+  {
+    path: 'app-task',
+    loadChildren: () =>
+      import('./modules/body-task/body-task.module').then(
+        (m) => m.BodyTaskModule
+      ),
+  },
+  
 ];
 
 @NgModule({

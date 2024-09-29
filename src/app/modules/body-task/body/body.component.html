@@ -1,0 +1,90 @@
+<div class="tittle">
+  <h3>Crear Tarea</h3>
+</div>
+
+<div class="container-login">
+  <div class="inputs-login">
+    <form>
+      <input
+        class="input-date"
+        placeholder="Nombre de la tarea"
+        type="text"
+        name="name"
+      />
+
+      <input
+        class="input-date"
+        placeholder="Fecha limite"
+        type="date"
+        name="date"
+      />
+     
+      <hr class="hr-black">
+
+      <div class="subtittle">
+        <h3>Personas Asociadas</h3>
+      </div>
+
+      <input
+        class="input-date"
+        placeholder="Nombre completo"
+        type="text"
+        name="nameC"
+      />
+
+      <input class="input-date" placeholder="Edad" type="number" name="age" />
+
+      <hr class="hr-blue">
+
+      <div class="subtittle">
+        <h3>Habilidades:</h3>
+      </div>
+
+
+      <div class="ability">
+        
+        <input
+          class="input-date"
+          placeholder="Nombre Habilidad"
+          type="text"
+          name="nameAbility"
+        />
+        <input class="input-button2" value=" - " routerLink="/login" />
+        <input class="input-button" value=" + " type="submit" />
+      </div>
+
+      <div class="ability">
+        
+        <input
+          class="input-date"
+          placeholder="Nombre Habilidad"
+          type="text"
+          name="nameAbility"
+        />
+        <input class="input-button2" value=" - " routerLink="/login" />
+        <input class="input-button" value=" + " type="submit" />
+      </div>
+
+      <hr class="hr-blue">
+
+
+      <div class="button-ability2" style="margin-top: 20px;">
+        <input class="input-button" value="Añadir persona" type="submit" />
+      <input class="input-button2" value="Eliminar persona" routerLink="/login" />
+      </div>
+
+      <hr class="hr-black">
+
+     
+
+
+      <input class="input-button" style="margin-top: 15px;"  value="Guardar Tarea" type="submit" />
+
+
+      <div class="help2">
+        <span>¿Quieres ver todas las tareas?</span>
+        <a class="register" routerLink="/login">Ver</a>
+      </div>
+    </form>
+  </div>
+</div>

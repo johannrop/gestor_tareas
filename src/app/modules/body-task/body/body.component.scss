@@ -1,0 +1,214 @@
+
+$color-azul-cla: #01b4c4;
+$color-azul: #008e9b;
+$color-azul-os: #051937;
+$color-gris: rgb(71, 71, 71);
+
+.tittle {
+  
+  display: flex;
+  justify-content: center;
+  h3 {
+    margin-top: 20px;
+  }
+}
+
+.subtittle {
+  display: flex;
+  justify-content: left;
+  h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+}
+
+.container-login {
+  padding-top: 30px;
+  border-radius: 78px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+  background: white;
+  width: 100%;
+  position: relative;
+
+  .inputs-login {
+    width: 80%;
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      .ability {
+        display: flex;
+
+        .input-date {
+          width: 70%;
+
+        }
+
+        .input-button2 {
+          width: 10%;
+          margin-left: 10px;
+        }
+        .input-button {
+          width: 10%;
+          margin-left: 10px;
+        }
+      }
+
+
+      .input-date:focus {
+        outline: none;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+          rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+          rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      }
+
+      .input-date::placeholder {
+        color: $color-azul-cla;
+        font-weight: 400;
+      }
+
+      .input-button {
+        font-size: 18px;
+        height: 30px;
+        border-radius: 28px;
+        margin-bottom: 25px;
+        border: none;
+        background: #008e9b;
+        color: white;
+      }
+
+      .input-button.none {
+        display: none;
+      }
+
+      .help {
+        margin-bottom: 30px;
+        span {
+          font-size: 14px;
+          color: $color-azul;
+        }
+        .register {
+          font-size: 14px;
+          color: $color-azul;
+
+          padding-left: 4px;
+          font-weight: 900;
+          cursor: pointer;
+        }
+        .accept {
+          margin-right: 8px;
+        }
+        .accept:focus {
+          box-shadow: #008e9b 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 1px;
+        }
+      }
+
+      .help2 {
+        margin-bottom: 80px;
+        text-align: center;
+        span {
+          font-size: 14px;
+          color: $color-azul;
+        }
+        .register {
+          font-size: 14px;
+          color: $color-azul;
+
+          padding-left: 8px;
+          font-weight: 900;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.container-login.show {
+  top: 0;
+}
+
+.input-button2 {
+  font-size: 18px;
+  height: 30px;
+  border-radius: 28px;
+  margin-bottom: 25px;
+  border: none;
+  background: #ff3b3b;
+  color: white;
+  text-align: center;
+}
+
+.input-button2:hover {
+  background: black;
+}
+
+.input-date {
+  padding-left: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  height: 30px;
+  border-radius: 28px;
+  margin-bottom: 15px;
+  border: none;
+  background: #efefef;
+  color: $color-azul;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.input-icon {
+  position: relative;
+}
+
+.input-icon input {
+  padding-left: 30px; 
+}
+
+.input-icon i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+  
+}
+
+.button-ability{
+  display: flex;
+  
+}
+
+.button-ability2{
+  display: flex;
+  justify-content: first baseline;
+  .input-button{
+    width: 50%;
+    margin: 1px;
+    
+  }
+
+  .input-button2{
+    width: 50%;
+    margin: 1px;
+  }
+}
+
+.hr-blue {
+  border: none;
+  height: 2px; 
+  background-color: rgb(50, 50, 164);
+  margin: 20px 0; 
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.hr-black {
+  border: none;
+  height: 2px;
+  background-color: rgb(0, 0, 0); 
+  margin: 20px 0; 
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
