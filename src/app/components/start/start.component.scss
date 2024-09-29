@@ -1,0 +1,34 @@
+$color-azul: #008e9b;
+$color-rojo: #ff3b3b;
+
+.button-ability {
+  margin-top: 18em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-button2 {
+  width: 60%;
+  font-size: 18px;
+  height: 30px;
+  border-radius: 28px;
+  margin-bottom: 25px;
+  border: none;
+  background: $color-rojo;
+  color: white;
+  text-align: center;
+}
+
+.input-button {
+  width: 60%;
+  font-size: 18px;
+  height: 30px;
+  border-radius: 28px;
+  margin-bottom: 25px;
+  border: none;
+  background: $color-azul;
+  color: white;
+  text-align: center;
+}
