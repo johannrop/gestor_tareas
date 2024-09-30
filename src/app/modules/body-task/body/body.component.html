@@ -2,14 +2,13 @@
   <h3>Crear Tarea</h3>
 </div>
 
-<div class="container-login" >
+<div class="container-login">
   <div class="inputs-login">
-    <form>
+    <form [formGroup]="tareaForm" (ngSubmit)="onSubmit()">
       <input
         class="input-date"
         placeholder="Nombre de la tarea"
         type="text"
-        name="name"
         formControlName="name"
       />
 
@@ -17,64 +16,94 @@
         class="input-date"
         placeholder="Fecha limite"
         type="date"
-        name="date"
         formControlName="date"
       />
-     
-      <hr class="hr-black">
 
-     <div class="personas">
-      <div class="subtittle">
-        <h3>Personas Asociadas</h3>
+      <hr class="hr-black" />
+      <div class="personas">
+        <div class="subtittle">
+          <h3>Personas Asociadas</h3>
+        </div>
+
+        <div formArrayName="personas">
+          <div
+            *ngFor="let persona of personas.controls; let i = index"
+            [formGroupName]="i"
+          >
+            <input
+              class="input-date"
+              placeholder="Nombre completo"
+              type="text"
+              formControlName="nameC"
+            />
+
+            <input
+              class="input-date"
+              placeholder="Edad"
+              type="number"
+              formControlName="age"
+            />
+
+            <div formArrayName="habilidades">
+              <div
+                *ngFor="
+                  let habilidad of getHabilidades(i).controls;
+                  let j = index
+                "
+              >
+                <input
+                  class="input-date"
+                  style="width: 60%"
+                  placeholder="Nombre Habilidad"
+                  type="text"
+                  [formControlName]="j"
+                />
+                <button
+                  class="input-button2"
+                  type="button"
+                  (click)="eliminarHabilidad(i, j)"
+                  style="width: 8%; margin-left: 6px"
+                >
+                  -
+                </button>
+                <button
+                  class="input-button"
+                  type="button"
+                  (click)="agregarHabilidad(i)"
+                  style="width: 8%; margin-left: 6px"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+
+            <div class="button-del-add">
+              <button
+                class="input-button2"
+                type="button"
+                (click)="eliminarPersona(i)"
+              >
+                Eliminar persona
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="button-del-add">
+          <button class="input-button" type="button" (click)="agregarPersona()">
+            Añadir persona
+          </button>
+        </div>
       </div>
+
+      <hr class="hr-black" />
 
       <input
-        class="input-date"
-        placeholder="Nombre completo"
-        type="text"
-        name="nameC"
+        type="submit"
+        class="input-button"
+        style="margin-top: 15px"
+        value="Guardar Tarea"
       />
-
-      <input class="input-date" placeholder="Edad" type="number" name="age" />
-
-      <hr class="hr-blue">
-
-      <div class="subtittle">
-        <h3>Habilidades:</h3>
-      </div>
-
-
-      <div class="ability" *ngFor="let habilidad of habilidades; let i = index; trackBy: trackByIndex">
-        <input
-          class="input-date"
-          placeholder="Nombre Habilidad"
-          type="text"
-          [(ngModel)]="habilidades[i]"  
-          name="nameAbility-{{ i }}" />
-        
-        <button class="input-button2" type="button" (click)="eliminarHabilidad(i)"> - </button>
-        <button class="input-button" type="button" (click)="agregarHabilidad(i)"> + </button>
-      </div>
-      
-      
-
-      <hr class="hr-blue">
-
-
-      <div class="button-ability2" style="margin-top: 20px;">
-        <input class="input-button" value="Añadir persona" type="submit" />
-      <input class="input-button2" value="Eliminar persona" routerLink="/login" />
-      </div>
-
-      <hr class="hr-black">
-
-     </div>
-
-     
-
-
-      <input type="submit"  class="input-button" style="margin-top: 15px;"  value="Guardar Tarea"  />
-
 
       <div class="help2">
         <span>¿Quieres ver todas las tareas?</span>

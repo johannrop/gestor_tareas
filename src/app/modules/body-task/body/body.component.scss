@@ -212,3 +212,14 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
+
+.button-del-add{
+  display: flex;
+  justify-content: center;
+  .input-button{
+    width: 60%;
+  }
+  .input-button2{
+    width: 60%;
+  }
+}
