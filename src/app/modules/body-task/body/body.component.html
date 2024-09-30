@@ -2,7 +2,7 @@
   <h3>Crear Tarea</h3>
 </div>
 
-<div class="container-login">
+<div class="container-login" >
   <div class="inputs-login">
     <form>
       <input
@@ -10,6 +10,7 @@
         placeholder="Nombre de la tarea"
         type="text"
         name="name"
+        formControlName="name"
       />
 
       <input
@@ -17,10 +18,12 @@
         placeholder="Fecha limite"
         type="date"
         name="date"
+        formControlName="date"
       />
      
       <hr class="hr-black">
 
+     <div class="personas">
       <div class="subtittle">
         <h3>Personas Asociadas</h3>
       </div>
@@ -41,29 +44,19 @@
       </div>
 
 
-      <div class="ability">
-        
+      <div class="ability" *ngFor="let habilidad of habilidades; let i = index; trackBy: trackByIndex">
         <input
           class="input-date"
           placeholder="Nombre Habilidad"
           type="text"
-          name="nameAbility"
-        />
-        <input class="input-button2" value=" - " routerLink="/login" />
-        <input class="input-button" value=" + " type="submit" />
-      </div>
-
-      <div class="ability">
+          [(ngModel)]="habilidades[i]"  
+          name="nameAbility-{{ i }}" />
         
-        <input
-          class="input-date"
-          placeholder="Nombre Habilidad"
-          type="text"
-          name="nameAbility"
-        />
-        <input class="input-button2" value=" - " routerLink="/login" />
-        <input class="input-button" value=" + " type="submit" />
+        <button class="input-button2" type="button" (click)="eliminarHabilidad(i)"> - </button>
+        <button class="input-button" type="button" (click)="agregarHabilidad(i)"> + </button>
       </div>
+      
+      
 
       <hr class="hr-blue">
 
@@ -75,10 +68,12 @@
 
       <hr class="hr-black">
 
+     </div>
+
      
 
 
-      <input class="input-button" style="margin-top: 15px;"  value="Guardar Tarea" type="submit" />
+      <input type="submit"  class="input-button" style="margin-top: 15px;"  value="Guardar Tarea"  />
 
 
       <div class="help2">
